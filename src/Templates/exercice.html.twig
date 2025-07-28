@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <h2 style="text-align: center;">Fiche de Membre</h2>
+    <h3> Name: {{ member.name | upper }}</h3>
+    <h3>Adhesion Year: {{ member.adhesionYear }}</h3>
+    <h3> {% if member.isActive %}
+            This member is active
+        {% else %}
+            This member is not active
+        {% endif %}
+    </h3>
+    <h2 style="text-align: center;">Excercice 2</h2>
+    {% if temperature >= 15 and temperature <= 24 %}
+        <p>Lecture à la terrasse</p>
+    {% elseif temperature >= 25 %}
+        <p>Lecture au parc!</p>
+    {% else %}
+        <p>Lecture en salle!</p>
+    {% endif %}
+    <h2 style="text-align: center;">Exercice 3</h2>
+    {% for book in books %}
+        <ul>
+            <li>{{ loop.index }}- {{ book.title }}, written by {{ book.author }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

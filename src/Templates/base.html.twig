@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Title</title>
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+    {% include 'header.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html.twig' %}
+{% endblock %}
+
+</body>
+</html>
